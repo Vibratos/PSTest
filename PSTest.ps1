@@ -14,5 +14,5 @@
 # Uncomment to send the input event to CloudWatch Logs
 # Write-Host (ConvertTo-Json -InputObject $LambdaInput -Compress -Depth 5)
 Write-Host "Printing the context:"
-$LambdaContext | Get-Member -MemberType Properties | ForEach-Object {Write-host " $($_.name) = $($LambdaContext.$($_.name))" }
+$LambdaInput | Get-Member -MemberType Properties | ForEach-Object {Write-host " $($_.name) = $($LambdaInput.$($_.name))" }
 $LambdaInput

@@ -26,13 +26,16 @@ $publishPSLambdaParams = @{
     Name = 'PSTest'
     ScriptPath = './PSTest.ps1'
     Region = 'us-east-1'
-    IAMRoleARN = 'lambda_basic_execution'
+    IAMRoleARN = 'lambda_basic_execution_role'
 }
 Publish-AWSPowerShellLambda @publishPSLambdaParams
 
+# invoke the new PowerShell function
 $resulst = Invoke-LMFunction -FunctionName PSTest -InvocationType Event
 $resulst | Select-Object -Property *
 
+
+# get the log events from the iviked function
 $logs = Get-CWLFilteredLogEvent -LogGroupName /aws/lambda/PSTest
 $logs.Events
 
