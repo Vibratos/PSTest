@@ -25,7 +25,7 @@ New-AWSPowerShellLambda -ScriptName PSTest -Template Basic
 $publishPSLambdaParams = @{
     Name = 'PSTest'
     ScriptPath = './PSTest.ps1'
-    Region = 'us-east-1'
+    Region = 'eu-central-1'
     IAMRoleARN = 'lambda_basic_execution_role'
 }
 Publish-AWSPowerShellLambda @publishPSLambdaParams
