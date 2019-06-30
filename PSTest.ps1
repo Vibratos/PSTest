@@ -15,7 +15,7 @@
 # Write-Host (ConvertTo-Json -InputObject $LambdaInput -Compress -Depth 5)
 
 # $LambdaInput | Get-Member -MemberType Properties | ForEach-Object {Write-host " $($_.name) = $($LambdaInput.$($_.name))" }
-$LambdaInput = Get-Content ./test_event.json | ConvertFrom-Json
+#$LambdaInput = Get-Content ./test_event.json | ConvertFrom-Json
 $tags = @{}
 $instanceName1 = "(No name)"
 $instanceID = $LambdaInput.detail.'instance-id'
